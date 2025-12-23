@@ -26,3 +26,30 @@ dist-ssr
 # Project specifies
 *.pem
 *.crx
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage
+*.lcov
+.nyc_output
+
+# Build artifacts
+build/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# pnpm
+pnpm-lock.yaml
+.pnpm-debug.log
+
+# Temporary files
+*.tmp
+*.temp
+.temp/

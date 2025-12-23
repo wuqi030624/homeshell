@@ -1,12 +1,13 @@
 {
-  "name": "yuindex",
-  "description": "极客范儿的浏览器主页",
+  "name": "homeshell",
+  "description": "智能浏览器起始页 - 图形化界面与终端完美结合",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "dev:crx": "cross-env BUILD_CRX=1 vite build --watch",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
+    "build:check": "vue-tsc --noEmit && vite build",
     "build:crx": "cross-env BUILD_CRX=1 vite build",
     "preview": "vite preview",
     "tsc": "vue-tsc --noEmit"

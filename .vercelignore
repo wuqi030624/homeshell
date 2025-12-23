@@ -1,0 +1,31 @@
+# 后端代码（保留但不部署）
+server/
+
+# 文档
+doc/
+*.md
+!README.md
+
+# 开发工具配置
+.vscode/
+.idea/
+*.drawio
+
+# Git
+.git/
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+.temp/
+*.tmp
+
+# 项目规划文档（不需要部署）
+REFACTOR_PLAN.md
+GIT_SETUP.md
+MONOREPO_STRATEGY.md
+PROJECT_SUMMARY.md
+DEPLOYMENT.md
+QUICK_START.md

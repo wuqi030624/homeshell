@@ -1,314 +1,291 @@
-# YuIndex - 极客范儿的浏览器主页
+# 🏠 HomeShell
 
-> Coolest browser index for geeks! 
-> 
-> 前后端全栈项目 By [程序员鱼皮](https://docs.qq.com/doc/DUFFRVWladXVjeUxW)
+> 智能浏览器起始页 - 图形化界面与终端完美结合
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
+[![Vue 3](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://vuejs.org/)
+[![TypeScript](https://img.shields.io/badge/typescript-4.x-blue.svg)](https://www.typescriptlang.org/)
 
+## ✨ 项目简介
 
-在线体验：[http://yuindex.yupi.icu](http://yuindex.yupi.icu)
+HomeShell 是一个现代化的浏览器起始页项目，结合了图形化界面和命令行终端的优势，为用户提供高效、美观的上网入口。
 
-视频演示：[https://www.bilibili.com/video/BV19B4y1Y7m8/](https://www.bilibili.com/video/BV19B4y1Y7m8/)
+### 核心特性
 
-![YuIndex 定制你的最强主页](./doc/assets/docpic1.png)
+- 🎨 **双模式交互** - 图形化界面与终端自由切换
+- ⌨️ **命令系统** - 支持自定义命令、参数解析、子命令
+- 🚀 **高性能** - 基于 Vue 3 + Vite，秒级启动
+- 🎯 **可扩展** - 插件化架构，轻松添加新功能
+- 📱 **响应式** - 完美适配各种屏幕尺寸
+- 🌈 **主题系统** - 支持自定义背景、颜色主题
 
-![YuIndex 用命令来控制网页](./doc/assets/docpic2.png)
+### 项目创新
 
-⭐️ 我在自己的 [编程知识星球](https://yupi.icu) 内花 4 个小时直播给大家详细解读了这个项目的创作思路 + 技术选型 + 系统设计 + 源码解读 + 思路扩展 + 简历亮点分享，如果你希望把这个项目写到简历上、或者深入学习，[欢迎加入我的星球观看](https://yupi.icu/%E6%98%9F%E7%90%83%E9%A1%B9%E7%9B%AE/Web%20%E7%BB%88%E7%AB%AF%E9%A1%B9%E7%9B%AE.html) 。
+- ✅ **图形化起始页** - 新增常用网站卡片、快捷入口等
+- ✅ **终端唤出/隐藏** - 优雅的动画效果，无缝切换
+- ✅ **搜索聚合** - 多平台搜索一键直达
+- ✅ **工程化优化** - 使用 pnpm 管理依赖，提升开发效率
 
+## 📸 项目截图
 
-## YuIndex 是什么？
+_（待添加项目截图）_
 
-一个很特别的浏览器主页，支持使用输入命令的方式来操作，目标是帮你在一个 web 终端中高效完成所有的事情！（all in one）
+## 🚀 快速开始
 
-此外，它也是一个功能强大的 web 终端组件。开发者可以在它的基础上定制自己的 web 终端，并且可以在终端中集成任何内容！
+### 环境要求
 
-> 如果你是一名程序员，相信你会爱上它~
+- Node.js >= 18.0.0
+- pnpm >= 8.0.0
 
-
-
-你可以将音乐、游戏，甚至可以将自己的偶像封装到主页~
-
-![](./doc/assets/docpic3.png)
-
-![](./doc/assets/docpic4.png)
-
-
-
-### 1 分钟上手使用
-
-请打开网站：https://yuindex.com
-
-然后在网站内依次输入以下命令：
+### 安装依赖
 
 ```bash
-baidu 程序员鱼皮
-github yuindex
-goto yupi.icu
-todo
-music 坤坤
-moyu
-按键 Ctrl + O 触发折叠, 再按可展开
-history
-按键 Ctrl + L 清屏
+cd ~/dev/frontend/learning-project/HomeShell
+pnpm install
 ```
 
-使用  `help 命令英文名` 可以查询某命令的具体用法，如：`help search` 。
+### 启动开发服务器
 
-使用 `shortcut` 可以查看所有的快捷键。
+```bash
+pnpm dev
+```
 
-> 完整命令用法请见：[命令手册](./doc/commands.md)
+访问 http://localhost:3000/
 
-尽情探索吧~
+### 构建生产版本
 
+```bash
+pnpm build
+```
 
+构建产物在 `dist/` 目录
 
+## 📦 技术栈
 
-## 项目优势
+### 前端核心
 
-### 用户
+- **Vue 3** - 渐进式 JavaScript 框架
+- **TypeScript** - 类型安全的 JavaScript 超集
+- **Vite** - 下一代前端构建工具
+- **Pinia** - Vue 的直观状态管理库
 
-- 无需鼠标，即可快速完成操作（比如从不同平台搜索内容）
-- 极简炫酷，极客范儿，Linux 的味道儿~
-- 支持快捷键、帮助和输入提示，降低使用成本
-- 支持定制背景等，打造你的个性主页
-- 帮助你熟悉 Linux 命令，感受到编程的乐趣
+### UI 与组件
 
+- **Ant Design Vue** - 企业级 UI 组件库
+- **xterm.js** - 功能强大的终端模拟器
 
+### 工具库
 
-### 开发者
+- **axios** - Promise 基础的 HTTP 客户端
+- **dayjs** - 轻量级日期处理库
+- **lodash** - JavaScript 实用工具库
+- **getopts** - 命令行参数解析
 
-- 可以独立使用功能丰富的 web 终端组件，或二次开发
-- 可以开发自己的命令并接入系统
+## 🎯 已支持命令
 
+### 搜索类
 
+```bash
+baidu <关键词>     # 百度搜索
+github <关键词>    # GitHub 搜索
+google <关键词>    # Google 搜索
+bing <关键词>      # Bing 搜索
+```
 
-### 学习者
+### 工具类
 
-- 可以学到 web 终端的开发方式
-- 可以学到系统设计知识，理解抽象和复用
-- 可以学到较为规范的代码目录和格式
+```bash
+todo               # 待办事项管理
+date               # 显示当前日期时间
+fanyi <文本>       # 中英文翻译
+ping <网址>        # 网络连接测试
+timing             # 定时器
+```
 
+### 导航类
 
+```bash
+goto <网址>        # 快速跳转到指定网站
+space              # 管理常用网站（类似收藏夹）
+```
 
-## 功能和特性
+### 娱乐类
 
-### web 终端
+```bash
+music <歌名>       # 在线音乐播放
+moyu               # 摸鱼小游戏
+```
 
-- 命令历史记录、快速执行历史命令
-- 快捷键
-- 清屏
-- 命令输入提示
-- Tab 键补全命令
-- 多种格式输出
-- 内置 5 种输出状态
-- 命令折叠 / 展开
-- 帮助手册自动生成
-- 自定义配置（比如更换背景、提示开关等）
-- 支持子命令
+### 系统类
 
+```bash
+help               # 查看所有命令
+history            # 命令历史
+background         # 更换背景
+clear / Ctrl+L     # 清屏
+reset              # 重置配置
+```
 
+## 🛠️ 二次开发
 
-### 已支持命令
+### 添加新命令
 
-> 完整命令用法请见：[命令手册](./doc/commands.md)
+1. **创建命令文件**
 
-- 多平台搜索 search
-- 网页快速跳转 goto
-- 空间管理（类似收藏夹，可以存储网页信息）
-- 查看日期 date
-- 翻译 fanyi
-- 待办事项 todo
-- 网络检测 ping
-- 定时器 timing
-- 更换背景 background
-- 听音乐 music
-- 摸鱼小游戏 moyu
-- 坤坤 ikun
-- 其他。。。
+```bash
+mkdir -p src/core/commands/mycommand
+touch src/core/commands/mycommand/myCommand.ts
+```
 
+2. **编写命令定义**
 
+```typescript
+import { CommandType } from '@/core/command';
 
-## 技术栈
+const myCommand: CommandType = {
+  func: 'my',
+  name: '我的命令',
+  desc: '这是一个自定义命令',
+  options: [
+    {
+      key: 'example',
+      desc: '示例选项',
+      alias: ['e'],
+      type: 'string',
+      required: false,
+    }
+  ],
+  action(options, terminal) {
+    const { example } = options;
+    terminal.writeTextSuccessResult(`执行成功！参数：${example}`);
+  },
+};
+
+export default myCommand;
+```
+
+3. **注册命令**
+
+在 `src/core/commandRegister.ts` 中导入并注册：
+
+```typescript
+import myCommand from './commands/mycommand/myCommand';
+
+const commandList: CommandType[] = [
+  // ... 其他命令
+  myCommand,
+];
+```
+
+### 自定义主题
+
+编辑 `src/configs/themeConfig.ts` 或在终端中使用 `background` 命令。
+
+### 修改欢迎信息
+
+编辑 `src/core/commands/terminal/config/welcomeCommand.ts`
 
-### 前端
+## 📂 项目结构
 
-主要技术：
+```
+homeshell/
+├── src/
+│   ├── assets/              # 静态资源
+│   ├── components/          # Vue 组件
+│   │   └── yu-terminal/    # 终端组件
+│   ├── configs/             # 配置文件
+│   ├── core/                # 核心功能
+│   │   ├── commands/       # 命令集
+│   │   ├── commandRegister.ts  # 命令注册
+│   │   └── commandExecutor.ts  # 命令执行器
+│   ├── pages/               # 页面组件
+│   ├── plugins/             # 插件
+│   ├── utils/               # 工具函数
+│   └── main.ts             # 入口文件
+├── public/                  # 公共静态资源
+├── server/                  # 后端代码（预留）
+├── package.json            # 项目配置
+├── vite.config.ts          # Vite 配置
+├── tsconfig.json           # TypeScript 配置
+└── README.md               # 项目文档
+```
 
-- Vue 3
-- Vite 2
-- Ant Design Vue 3 组件库
-- Pinia 2 状态管理
-- TypeScript 类型控制
-- Eslint 代码规范控制
-- Prettier 美化代码
+## 🚢 部署
 
-依赖库：
+### Vercel 部署（推荐）
 
-- axios 网络请求
-- dayjs 时间处理
-- lodash 工具库
-- getopts 命令参数解析
+1. Fork 本仓库到你的 GitHub
+2. 在 [Vercel](https://vercel.com) 注册并导入项目
+3. 配置构建设置：
+   - Framework Preset: `Vite`
+   - Build Command: `pnpm build`
+   - Output Directory: `dist`
+   - Install Command: `pnpm install`
+4. 点击 Deploy
 
-库：getopts
+### 其他平台
 
+项目支持部署到任何静态网站托管平台：
 
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
+- 自己的服务器
 
+## 🗺️ 开发路线图
 
-### 后端
+### v1.0 (当前)
 
-主要技术：
+- [x] 基础终端功能
+- [x] 命令系统
+- [x] 项目重命名和品牌化
+- [ ] 图形化起始页 UI
+- [ ] 终端唤出/隐藏动画
 
-- Node.js
-- Express、express-session
-- MySQL
-- Sequelize（ORM 框架）
-- Redis
+### v1.1 (计划中)
 
-依赖库：
+- [ ] 常用网站卡片管理
+- [ ] 搜索聚合功能
+- [ ] 自定义主题系统
+- [ ] 快捷键增强
 
-- Axios
-- NeteaseCloudMusicApi
+### v2.0 (未来)
 
-依赖服务：
+- [ ] 用户系统和数据同步
+- [ ] 浏览器扩展版本
+- [ ] AI 助手集成
+- [ ] 移动端适配
+- [ ] 多语言支持
 
-- 百度翻译 API
-- 新浪壁纸 API
+## 🤝 致谢
 
-[点击了解后端详情](server/README.md)
+本项目基于 [YuIndex](https://github.com/liyupi/yuindex) 进行二次开发，感谢 [程序员鱼皮](https://github.com/liyupi) 提供的优秀开源项目。
 
+### 主要改进
 
+- 项目重命名和品牌化
+- 包管理器从 Yarn 迁移到 pnpm
+- 优化依赖管理和构建配置
+- 新增图形化起始页功能（开发中）
+- 改进项目结构和工程化配置
 
-## 目录结构
+## 📄 开源协议
 
-- public 公共静态资源
-- server 后端
-- src
-  - assets 静态资源
-  - components 组件
-    - yu-terminal 终端组件
-  - configs 配置
-    - routes 路由
-  - core 核心
-    - commands 命令集
-    - commandRegister 命令注册
-    - commandExecutor 命令执行器
-  - pages 页面
-    - IndexPage.vue 主页
-  - plugins 第三方依赖
-  - utils 工具
-  - App.vue 主页面
-  - env.d.ts 环境定义
-  - main.ts Vue 主文件
-- .eslintrc.js 代码规范
-- components.d.ts 自动生成的组件动态引入
-- Dockerfile 镜像构建
-- index.html 静态主页
-- package.json 项目管理
-- tsconfig.json TS 配置
-- vite.config.ts 打包工具配置
+本项目遵循 MIT 协议开源，详见 [LICENSE](./LICENSE) 文件。
 
+原项目 YuIndex 同样使用 MIT 协议。
 
+## 📮 联系方式
 
-## 系统设计
+- GitHub: [@yourusername](https://github.com/yourusername)
+- Email: your-email@example.com
+- 项目主页: https://github.com/yourusername/homeshell
 
-### 设计理念
+## ⭐ Star History
 
-1. 开放：采用类插件化设计，便于开发者自定义新命令，且能够通过配置自动生成帮助提示
-2. 重前端轻后端：考虑到扩展性、安全性以及实现的方便，除了核心模块外，尽量不请求后端
+如果这个项目对你有帮助，欢迎 Star ⭐
 
+---
 
-
-### 核心
-
-系统分为 3 个核心模块，各模块职责分明：
-
-- 微终端：UI 展示和终端交互逻辑
-- 命令系统：连接微终端和命令集（中介者），负责匹配、解析和执行命令，并通过终端提供的操作接口给予其反馈
-- 命令集：各种不同功能的命令定义和实现
-
-
-
-前端架构图：
-
-![](./doc/assets/docpic5.png)
-
-
-
-### 微终端
-
-从 0 开始实现的 web 终端控制台，包含以下模块：
-
-- 终端输入：常驻 Input 框，负责接收用户命令
-- 终端输出：负责展示用户的命令及执行结果等，支持以下三种类型的输出
-  - 命令类型：输入命令 + 结果列表
-  - 文本类型：单行文本展示，内置 5 种不同的展示状态（成功、错误、警告、信息、系统等）
-  - 自定义组件类型：可以自由定制要展示的内容
-- 快捷键：更方便地操作终端，使用 `document.onkeydown` 全局按键事件实现
-- 开放接口：提供一组操作终端的 API，供命令系统调用，比如清屏、立即输出等
-- 命令历史：记录用户输入的命令结果，使用 Vue 3 Composition API 封装部分逻辑
-- 命令提示：根据用户的输入给出提示，使用 Vue 3 Composition API 独立封装
-
-
-
-
-### 命令系统
-
-一套独立于终端的命令解析执行引擎，包含以下模块：
-
-- 注册器：用于注册和管理可被匹配的命令集
-- 匹配器：根据输入文本匹配到对应的命令
-- 解析器：从输入文本中解析出参数和选项
-- 执行器：执行命令，完成操作
-- 子命令机制：支持递归解析子命令
-
-
-
-### 命令集
-
-一组可用命令的集合（类似插件），通过 TS 明确命令的定义，支持配置别名、选项、子命令等，便于开发者扩展和定制。
-
-核心命令包括：
-
-- 空间系统：自实现的类文件系统，可以管理网页链接等内容
-- 用户系统：管理用户、同步个人定制化内容
-- 终端控制：定制或控制终端，比如更换背景、输出帮助等
-- 搜索：可以快速从不同搜索引擎检索内容
-- 其他模块。。。
-
-
-
-### 为什么要自己写终端？
-
-1. 本来打算使用现成的 xterm.js，但实际使用中发现它的文档比较少、问题难解决（比如中文字符），解决问题消耗的时间足够自己写一套新的 web 终端了。而且它更适用于和后端服务器强交互的场景，与本项目的定位不符。
-2. 开源的 web 终端很少，给开源贡献一份力。
-3. 帮助自己复习 Vue，突破个人系统开发设计能力的边界。
-
-
-
-### 更多讲解
-
-如果你希望获取该项目的完整详细讲解，欢迎加入 [鱼皮的编程知识星球](https://yupi.icu/) ，这是鱼皮的编程学习圈子，我会在圈子内带大家从 0 到 1 分析解读这个项目，让你也能独立做一个，项目经历 + 1。
-
-
-
-## 贡献指南
-
-欢迎各位朋友贡献代码，还请先阅读以下指南。
-
-
-
-### 开发新命令
-
-1. 在 commands 下新建目录，目录名称为命令英文名称，所有该命令相关的代码都必须放在该目录中
-2. 编写命令定义文件 xxxCommand.ts（xxx 为命令英文名称），可以参考其他命令，如 music、goto 等
-3. 若命令包含子命令，需要将子命令相关文件放到 subCommands 目录中，可以参考 user 命令
-4. 在 commandRegister 的 commandList 中补充新命令
-5. 测试验证通过后，可以发起 PR 等鱼皮合并
-
-
-
-## 致谢
-
-摸鱼命令的实现依赖于 https://haiyong.site/moyu ，感谢大佬的开源分享。
-
+**Built with ❤️ by [Your Name]**
