@@ -1,6 +1,6 @@
 # 🏠 HomeShell
 
-> 智能浏览器起始页 - 图形化界面与终端完美结合
+> 智能浏览器起始页 - Todo 管理与终端完美结合
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org/)
@@ -9,23 +9,29 @@
 
 ## ✨ 项目简介
 
-HomeShell 是一个现代化的浏览器起始页项目，结合了图形化界面和命令行终端的优势，为用户提供高效、美观的上网入口。
+HomeShell v2.0 是一个现代化的浏览器起始页项目，以 **Todo 管理为核心**，通过统一输入框实现任务管理、搜索、命令执行三位一体的高效工作流。
 
-### 核心特性
+### 核心特性 v2.0
 
-- 🎨 **双模式交互** - 图形化界面与终端自由切换
-- ⌨️ **命令系统** - 支持自定义命令、参数解析、子命令
-- 🚀 **高性能** - 基于 Vue 3 + Vite，秒级启动
-- 🎯 **可扩展** - 插件化架构，轻松添加新功能
-- 📱 **响应式** - 完美适配各种屏幕尺寸
-- 🌈 **主题系统** - 支持自定义背景、颜色主题
+- ✅ **Todo 管理核心** - 状态流转（TODO → DOING → DONE），优先级标记，标签系统
+- 📝 **便签系统** - 每个 Todo 可添加多条便签记录思路和进展
+- 🎨 **统一输入框** - 一个输入框完成所有操作（新建 todo、搜索、命令）
+- ⌨️ **命令模式** - 通过 `/` 前缀执行命令，如 `/1` 选中、`/s` 开始、`/d` 完成
+- 🔍 **搜索模式** - Tab 键切换到搜索模式，支持多搜索引擎
+- 💻 **终端抽屉** - Ctrl+` 唤出终端，保留所有命令行功能
+- 🚀 **高性能** - Vue 3 Composition API + Pinia 状态管理
+- 🎯 **键盘优先** - 所有操作均可通过键盘完成
+- 📱 **响应式设计** - 完美适配各种屏幕尺寸
+- 🌈 **现代 UI** - 深色主题，流畅动画，极简美学
 
-### 项目创新
+### v2.0 新特性
 
-- ✅ **图形化起始页** - 新增常用网站卡片、快捷入口等
-- ✅ **终端唤出/隐藏** - 优雅的动画效果，无缝切换
-- ✅ **搜索聚合** - 多平台搜索一键直达
-- ✅ **工程化优化** - 使用 pnpm 管理依赖，提升开发效率
+- **图形化 Dashboard** - 清晰的 Todo 列表视图，状态一目了然
+- **智能输入解析** - 自动识别 todo、命令、选择、便签等不同输入类型
+- **DOING 状态专注** - 当有任务进行中时，自动隐藏其他任务保持专注
+- **便签系统** - 为每个 todo 添加详细记录，支持多级选择
+- **模式切换** - 默认、搜索、命令模式无缝切换
+- **纯前端实现** - 数据本地存储，无需后端依赖
 
 ## 📸 项目截图
 
@@ -82,33 +88,64 @@ pnpm build
 - **lodash** - JavaScript 实用工具库
 - **getopts** - 命令行参数解析
 
-## 🎯 已支持命令
+## 🎮 使用指南
 
-### 搜索类
+### 基本操作
 
-```bash
-baidu <关键词>     # 百度搜索
-github <关键词>    # GitHub 搜索
-google <关键词>    # Google 搜索
-bing <关键词>      # Bing 搜索
-```
+**创建 Todo:**
 
-### 工具类
+- 直接在输入框输入内容，按 Enter 创建
+- 支持优先级：`重要任务 !` (空格+感叹号标记为重要)
+- 支持标签：`学习Vue #前端 #Vue3` (# 标记标签)
 
-```bash
-todo               # 待办事项管理
-date               # 显示当前日期时间
-fanyi <文本>       # 中英文翻译
-ping <网址>        # 网络连接测试
-timing             # 定时器
-```
+**Todo 操作:**
+
+- `/1` - 选中第 1 个 todo
+- `s` 或 `/s` - 开始选中的 todo (状态变为 DOING)
+- `d` 或 `/d` - 完成选中的 todo (状态变为 DONE)
+- `r` 或 `/r` - 重置选中的 todo (状态变为 TODO)
+- `rm` 或 `/rm` - 删除选中的 todo
+
+**便签操作:**
+
+- 选中 todo 后，直接输入内容创建便签
+- `//1` - 选中第 1 条便签
+- `//` - 选中第一条便签
+- 选中便签后可编辑或删除
+
+**模式切换:**
+
+- `Tab` - 进入搜索模式
+- `Tab` (在搜索模式) - 切换搜索引擎
+- `Esc` - 返回默认模式
+- `Ctrl + `` - 打开/关闭终端抽屉
+- `Ctrl + L` - 清除浮层
+
+### 键盘快捷键
+
+| 快捷键     | 功能                      |
+| ---------- | ------------------------- |
+| `Enter`    | 提交输入/保存编辑         |
+| `Esc`      | 返回默认模式/清除选择     |
+| `Tab`      | 进入搜索模式/切换搜索引擎 |
+| `Ctrl + `` | 打开/关闭终端             |
+| `Ctrl + L` | 清除输出浮层              |
+| `/命令`    | 执行命令                  |
+| `/数字`    | 选中对应 todo             |
+| `//数字`   | 选中对应便签              |
+
+fanyi <文本> # 中英文翻译
+ping <网址> # 网络连接测试
+timing # 定时器
+
+````
 
 ### 导航类
 
 ```bash
 goto <网址>        # 快速跳转到指定网站
 space              # 管理常用网站（类似收藏夹）
-```
+````
 
 ### 娱乐类
 
@@ -141,20 +178,20 @@ touch src/core/commands/mycommand/myCommand.ts
 2. **编写命令定义**
 
 ```typescript
-import { CommandType } from '@/core/command';
+import { CommandType } from "@/core/command";
 
 const myCommand: CommandType = {
-  func: 'my',
-  name: '我的命令',
-  desc: '这是一个自定义命令',
+  func: "my",
+  name: "我的命令",
+  desc: "这是一个自定义命令",
   options: [
     {
-      key: 'example',
-      desc: '示例选项',
-      alias: ['e'],
-      type: 'string',
+      key: "example",
+      desc: "示例选项",
+      alias: ["e"],
+      type: "string",
       required: false,
-    }
+    },
   ],
   action(options, terminal) {
     const { example } = options;
@@ -170,7 +207,7 @@ export default myCommand;
 在 `src/core/commandRegister.ts` 中导入并注册：
 
 ```typescript
-import myCommand from './commands/mycommand/myCommand';
+import myCommand from "./commands/mycommand/myCommand";
 
 const commandList: CommandType[] = [
   // ... 其他命令

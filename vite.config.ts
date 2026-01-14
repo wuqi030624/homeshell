@@ -1,14 +1,19 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-// @ts-ignore
 import Components from "unplugin-vue-components/vite";
-// @ts-ignore
 import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
-// @ts-ignore
-import { chromeExtension } from "./build/chromeExtension";
+import { resolve } from "path";
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 3000,
+    host: "0.0.0.0", // 允许 WSL 外部访问
+  },
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+    },
+  },
   plugins: [
     vue(),
     // 按需加载 ant-design-vue

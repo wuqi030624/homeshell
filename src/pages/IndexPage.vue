@@ -1,34 +1,36 @@
 <template>
-  <yu-terminal
-    ref="terminalRef"
-    :user="loginUser"
-    full-screen
-    :on-submit-command="onSubmitCommand"
+  <DashboardView />
+  <TerminalDrawer
+    :is-open="appStore.isTerminalOpen"
+    @close="appStore.toggleTerminal"
   />
+  <OutputPopup
+    :is-open="appStore.isPopupOpen"
+    :content="appStore.popupContent"
+    @close="appStore.hidePopup"
+  />
+  <CommandPalette />
+  <QuickBar />
+  <KeyboardHelp />
+  <ConfirmDialog />
+  <ToastNotification />
 </template>
 
 <script setup lang="ts">
-import { doCommandExecute } from "../core/commandExecutor";
-import { onMounted, ref } from "vue";
-import { useUserStore } from "../core/commands/user/userStore";
-import { storeToRefs } from "pinia";
+import DashboardView from "@/components/dashboard/DashboardView.vue";
+import TerminalDrawer from "@/components/dashboard/TerminalDrawer.vue";
+import OutputPopup from "@/components/dashboard/OutputPopup.vue";
+import CommandPalette from "@/components/dashboard/CommandPalette.vue";
+import QuickBar from "@/components/dashboard/QuickBar.vue";
+import KeyboardHelp from "@/components/dashboard/KeyboardHelp.vue";
+import ConfirmDialog from "@/components/dashboard/ConfirmDialog.vue";
+import ToastNotification from "@/components/dashboard/ToastNotification.vue";
+import { useAppStore } from "@/stores/appStore";
+import { useKeyboard } from "@/composables/useKeyboard";
 
-const terminalRef = ref();
+const appStore = useAppStore();
 
-const onSubmitCommand = async (inputText: string) => {
-  if (!inputText) {
-    return;
-  }
-  const terminal = terminalRef.value.terminal;
-  await doCommandExecute(inputText, terminal);
-};
-
-const userStore = useUserStore();
-const { loginUser } = storeToRefs(userStore);
-
-onMounted(() => {
-  userStore.getAndSetLoginUser();
-});
+useKeyboard();
 </script>
 
-<style></style>
+<style scoped></style>

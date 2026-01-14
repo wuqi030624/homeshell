@@ -1,6 +1,6 @@
 import { CommandType } from "../../../command";
 import { defineAsyncComponent } from "vue";
-import ComponentOutputType = YuTerminal.ComponentOutputType;
+import ComponentOutputType = HomeShell.ComponentOutputType;
 
 const baseUrl = "https://www.baidu.com/s";
 

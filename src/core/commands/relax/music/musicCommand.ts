@@ -1,6 +1,6 @@
 import { CommandType } from "../../../command";
 import { defineAsyncComponent } from "vue";
-import ComponentOutputType = YuTerminal.ComponentOutputType;
+import ComponentOutputType = HomeShell.ComponentOutputType;
 
 /**
  * 音乐命令
