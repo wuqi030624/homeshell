@@ -49,6 +49,9 @@ Thumbs.db
 pnpm-lock.yaml
 .pnpm-debug.log
 
+# npm (项目使用 pnpm)
+package-lock.json
+
 # Temporary files
 *.tmp
 *.temp
